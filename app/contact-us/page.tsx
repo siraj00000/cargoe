@@ -31,7 +31,7 @@ const InputComponent: React.FC<InputComponentTypes> = ({ inputProps }) => (
   />
 );
 
-const GIRL_IMAGE_URL = `https://res.cloudinary.com/duyspylge/image/upload/v1688132255/Cargo-Project-Assets/GirlSVG_e3n270.svg`;
+const GIRL_IMAGE_URL = `https://res.cloudinary.com/duyspylge/image/upload/v1688134227/Cargo-Project-Assets/girl_3_qn5mgn.svg`;
 
 const ContactUsPage = () => {
   return (
