@@ -9,6 +9,10 @@
   outline: none;
 }
 
+body{
+  overflow-x: hidden
+}
+
 .text12 {
   @apply text-12 leading-16;
 }
@@ -78,4 +82,8 @@
 .plane-bg {
   background: url("/public/SectionBgSVG.svg") center no-repeat;
   background-size: cover;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -5,6 +5,12 @@ export type FeaturesProps = {
   title: string;
 };
 
+export type ThirdPartyLogisticsTypes = {
+  Icon: string | StaticImageData;
+  title: string;
+  description: string;
+};
+
 export type ReachOutOptionProps = {
   Icon: string | StaticImageData;
   title: string;

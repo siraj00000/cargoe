@@ -8,14 +8,16 @@ const ReachOutCard: React.FC<ReachOutOptionProps> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-col gap-3 p-3 py-5 rounded-24 flex-1 box-shadow max-w-254 max-h-320 h-full  text-center">
-      <Image
-        src={Icon}
-        className="w-auto h-auto object-contain mx-auto"
-        alt=""
-      />
-      <h4 className="text14 font-sharpsans700">{title}</h4>
-      <p className="text14 font-nunito400">{description}</p>
+    <div className="">
+      <div className="w-238 p-3 py-5 rounded-24 box-shadow h-full text-center">
+        <Image
+          src={Icon}
+          className="w-auto h-auto object-contain mx-auto"
+          alt=""
+        />
+        <h4 className="text14 font-sharpsans700 my-3">{title}</h4>
+        <p className="text14 font-nunito400">{description}</p>
+      </div>
     </div>
   );
 };

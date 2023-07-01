@@ -29,6 +29,13 @@ import PersonThree from "@/public/PersonThree.svg";
 import PeterOkhardCompanyLogoSVG from "@/public/PeterOkhardCompanyLogoSVG.svg";
 import DanSummers from "@/public/DanSummers.svg";
 import SaraFeySVG from "@/public/SaraFeySVG.svg";
+import LandFreight from "@/public/LandFreight.svg";
+import OccienFrightCard from "@/public/OccienFrightCard.svg";
+import AirFrightCard from "@/public/AirFrightCard.svg";
+import RailFrightCard from "@/public/RailFrightCard.svg";
+import DataAnalyticsSVG from "@/public/DataAnalyticsSVG.svg";
+import SchedualMobAppSVG from "@/public/SchedualMobAppSVG.svg";
+
 import CoronaAppScreenSVG from "@/public/CoronaAppScreenSVG.svg";
 import { ArrowRightIcon, CheckIcon } from "@heroicons/react/24/outline";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -38,6 +45,7 @@ import {
   AvatorComponentProps,
   FeaturesProps,
   ReachOutOptionProps,
+  ThirdPartyLogisticsTypes,
 } from "@/types/index.types";
 import ReachOutCard from "@/components/ReachOutCard";
 import DynamicImageWithComponents from "@/components/DynamicImageWithComponents";
@@ -48,6 +56,29 @@ const featuresList: FeaturesProps[] = [
   { Icon: StreamLinedFinancingSVG, title: "Streamlined Financing" },
   { Icon: RealTimeTrackingSVG, title: "Real-time Tracking" },
   { Icon: ComplianceAndClaimsSVG, title: "Compliance & Claims" },
+];
+
+const ThirdPartyLogistics: ThirdPartyLogisticsTypes[] = [
+  {
+    Icon: LandFreight,
+    title: "Land Freight",
+    description: "Specialized Cloud-Based ERP software for businesses",
+  },
+  {
+    Icon: OccienFrightCard,
+    title: "Ocean Freight",
+    description: "Third-party logistics, 3PL & Freight Forwader",
+  },
+  {
+    Icon: AirFrightCard,
+    title: "Air Freight",
+    description: "Specialized Cloud-Based ERP software for businesses",
+  },
+  {
+    Icon: RailFrightCard,
+    title: "Rail Freight",
+    description: "Third-party logistics, 3PL & Freight Forwader",
+  },
 ];
 
 const ReactOutOptions: ReachOutOptionProps[] = [
@@ -96,8 +127,8 @@ const AvatarCustomerComponent: AvatorComponentProps[] = [
     blurBg: "blured-bg-3",
     name: "Frank Smart",
     designation: "Logistics Manager",
-    companyLogo: PersonOne,
-    profilePic: PersonOneCompany,
+    companyLogo: PersonOneCompany,
+    profilePic: PersonOne,
     designationTextColor: "text-activeTab",
   },
 ];
@@ -137,14 +168,15 @@ const HomePage = () => {
     <div>
       {/* Hero Section */}
       <section className="relative bg-lightGray pb-20">
-        <div className="md:h-300 bg-light absolute top-0 inset-0"></div>
-        <div className="px-8per h-auto">
+        <div className="max-md:hidden lg:h-300 bg-light absolute top-0 inset-0"></div>
+        {/* Hero Section Desktop */}
+        <div className="lg:px-8per lg:h-auto">
           {/* Blue Bg */}
-          <div className="relative h-auto">
-            <div className="absolute top-0 left-0 right-0 bottom-0 bg-primary bg-opacity-90 rounded-48 z-10" />
+          <div className="relative h-auto max-md:hidden max-h-576 max-w-1440 mx-auto">
+            <div className="absolute inset-0 bg-primary bg-opacity-90 rounded-48 z-10" />
             <Image
               src={ShipBgSVG}
-              className="w-full h-full object-cover"
+              className="w-full h-full max-h-576 rounded-48 object-cover"
               alt=""
             />
             <div className="grid md:grid-cols-2 grid-cols-1 pt-14 text-light z-20 space-x-3 absolute inset-0 h-full w-full">
@@ -187,18 +219,63 @@ const HomePage = () => {
             </div>
           </div>
 
+          {/* Hero Section Mobile */}
+          <div className="md:hidden block relative bg-primary">
+            <div className="w-full p-8per relative top-20 h-300 z-10">
+              <h4 className="text-white font-sharpsans800 text-40 w-4/5">
+                Third-party logistics, 3PL & Freight Forwader
+              </h4>
+              <p className="text-white text-16 leading-24 font-nunito400 mt-4">
+                Transform your logistics processes with Cargoe to explore a
+                hidden world of opportunities you won’t find elsewhere.
+              </p>
+              <div className="flex-between rounded-16 border border-light mt-8">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  className="bg-transparent placeholder:text-light px-8 tex16 font-nunito400"
+                />
+                <button className="bg-accent rounded-xl text-secondary font-nunito700 py-3 px-5">
+                  Get Started
+                </button>
+              </div>
+            </div>
+
+            <div className="w-full relative px-8per">
+              <Image
+                src={ShipBgSVG}
+                className="w-full h-auto object-contain relative top-60 z-0 "
+                alt=""
+              />
+              <Image
+                src={HeroMenSVG}
+                className="w-auto h-auto object-contain relative left-20 z-10"
+                alt=""
+              />
+            </div>
+          </div>
+
           {/* Cargo Cards */}
-          <div className="w-full flex items-center justify-center px-8per relative h-auto md:-top-32 z-30 gap-5">
-            <CargosCard />
-            <CargosCard />
-            <CargosCard />
-            <CargosCard />
+          <div className="max-w-1440 mx-auto max-md:hidden w-full flex items-center justify-center px-8per relative h-auto md:-top-32 z-30 gap-5">
+            {ThirdPartyLogistics.map((item, index) => (
+              <CargosCard key={index} {...item} />
+            ))}
+          </div>
+
+          {/* Cargo Cards */}
+          <div className="lg:hidden block w-full overflow-x-auto px-2 scrollbar-hide relative -top-20 z-10">
+            <div className="flex items-center gap-5 w-full overflow-x-scroll pb-10  scrollbar-hide">
+              {ThirdPartyLogistics.map((item, index) => (
+                <CargosCard key={index} {...item} />
+              ))}
+            </div>
           </div>
 
           {/* 
             Digital Redesign contain two columns 
           */}
-          <div className="grid grid-cols-2 px-8per">
+          <div className="max-w-1440 mx-auto grid lg:grid-cols-2 grid-cols-1 px-8per">
             <div className="pt-20per col-span-1">
               <h4 className="text-40 font-sharpsans800 text-primary">
                 Digitally Redesigned <br />{" "}
@@ -214,7 +291,7 @@ const HomePage = () => {
                 Book a Demo
               </button>
             </div>
-            <div className="col-span-1 relative h-full">
+            <div className="col-span-1 relative lg:h-full h-400">
               <div className="h-400 w-auto absolute inset-0">
                 <Image
                   src={LaptopSVG}
@@ -228,16 +305,18 @@ const HomePage = () => {
       </section>
 
       {/* Meet Your Customer Section */}
-      <section className="grid grid-cols-2 px-12per py-8per gap-10">
-        <DynamicImageWithComponents
-          backgroundImage={CustomerCareSVG}
-          profileImage={FrankSmartSVG}
-          profilerBlurClass="blured"
-          iconsPositioning="right-[18%]"
-          AvatorComponentProps={AvatarCustomerComponent}
-        />
+      <section className="max-w-1440 mx-auto w-full grid lg:grid-cols-2 grid-cols-1 px-12per py-8per gap-10">
+        <div className="col-span-1 lg:order-1 order-last">
+          <DynamicImageWithComponents
+            backgroundImage={CustomerCareSVG}
+            profileImage={FrankSmartSVG}
+            profilerBlurClass="blured"
+            iconsPositioning="right-[18%]"
+            AvatorComponentProps={AvatarCustomerComponent}
+          />
+        </div>
 
-        <div className="col-span-1 flex flex-col justify-center items-start">
+        <div className="col-span-1 flex flex-col justify-center items-start lg:order-last order-1">
           <h4 className="text-40 font-sharpsans800 text-primary">
             {`Meet Your Customers'`} <br />{" "}
             <span className="text-secondary">Ever-Changing</span> Needs
@@ -260,7 +339,7 @@ const HomePage = () => {
       </section>
 
       {/* Why It’s High Time Your Company Goes Digital */}
-      <section className="grid grid-cols-2 w-full">
+      <section className="grid lg:grid-cols-2 grid-cols-1s w-full">
         <div className="col-span-1 px-12per py-28">
           <h1 className="text-secondary font-sharpsans800 text-40">
             Why It’s High Time Your Company Goes Digital
@@ -283,12 +362,14 @@ const HomePage = () => {
         </div>
         <div className="col-span-1 relative py-28">
           <div className="w-3/4 h-full absolute top-0 right-0 bg-primary rounded-l-48" />
-          <VideoPlayer />
+          <div className="relative lg:left-auto left-10">
+            <VideoPlayer />
+          </div>
         </div>
       </section>
 
       {/* Our Online Marketplace Ensures Your Success */}
-      <section className="pt-8per">
+      <section className="lg:p-0 lg:pt-8per p-8per">
         <h1 className="text-secondary font-sharpsans800 text-40 text-center">
           Our Online Marketplace <br />{" "}
           <span className="text-primary">Ensures Your Success</span>
@@ -299,7 +380,7 @@ const HomePage = () => {
           overcome the bumps in the road by strengthening your core competency,
           networking power, and collaboration through the power of technology.
         </p>
-        <div className="flex items-center justify-center gap-3 my-10">
+        <div className="flex items-center flex-wrap justify-center gap-3 my-10">
           {featuresList.map((item, index) => (
             <Features key={index} {...item} />
           ))}
@@ -307,129 +388,147 @@ const HomePage = () => {
       </section>
 
       {/* Fleet Management */}
-      <section className="bg-neutral grid grid-cols-2 px-8per gap-32">
-        <div className="col-span-1 relative flex pt-8per">
-          <Image
-            src={AppActivesSVG}
-            alt="AppActivesSVG"
-            className="w-auto h-auto object-contain relative left-44 bottom-14 z-10"
-          />
-          <Image
-            src={AppSnapSVG}
-            alt="AppSnapSVG"
-            className="w-auto h-auto object-fill relative left-32 bottom-10 z-0 rounded-48"
-          />
-          <Image
-            src={FileLady}
-            alt="FileLady"
-            className="w-auto h-auto object-contain relative z-10"
-          />
-        </div>
+      <section className="bg-neutral">
+        <div className="max-w-1440 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:p-0 p-8per px-8per gap-32">
+          <div className="col-span-1 relative flex pt-8per md:right-auto sm:right-[20%]">
+            <Image
+              src={AppActivesSVG}
+              alt="AppActivesSVG"
+              className="w-auto h-auto object-contain relative left-44 bottom-14 z-10"
+            />
+            <Image
+              src={AppSnapSVG}
+              alt="AppSnapSVG"
+              className="w-auto h-auto object-fill relative left-32 bottom-10 z-0 rounded-48"
+            />
+            <Image
+              src={FileLady}
+              alt="FileLady"
+              className="w-auto h-auto object-contain relative z-10"
+            />
+          </div>
 
-        <div className="col-span-1 flex flex-col items-start justify-center gap-5">
-          <h1 className="text-secondary font-sharpsans800 text-32 text-center">
-            Fleet Management
-          </h1>
-          <p className="text-secondary font-nunito400 text14 w-4/5">
-            Never run the risk of compliance issues and manage your business
-            according to established standards all in one place. With our ERP
-            system, managing TSA Cargo as per IACSSP requirements and complying
-            with Customs Border Protection is hassle-free. This is topped off by
-            seamless Department of Transportation Compliance including HOS Logs,
-            Maintenance Inspections, and more along with managing OS&D reporting
-            due to cargo claims.
-          </p>
-          <p className="flex items-center gap-2 text-secondary font-nunito700 text16 text-center">
-            View more about our services{" "}
-            <ArrowRightIcon className="h-4 w-4 text-secondary" />{" "}
-          </p>
+          <div className="col-span-1 flex flex-col items-start justify-center gap-5">
+            <h1 className="text-secondary font-sharpsans800 text-32 text-center">
+              Fleet Management
+            </h1>
+            <p className="text-secondary font-nunito400 text14 w-4/5">
+              Never run the risk of compliance issues and manage your business
+              according to established standards all in one place. With our ERP
+              system, managing TSA Cargo as per IACSSP requirements and
+              complying with Customs Border Protection is hassle-free. This is
+              topped off by seamless Department of Transportation Compliance
+              including HOS Logs, Maintenance Inspections, and more along with
+              managing OS&D reporting due to cargo claims.
+            </p>
+            <p className="flex items-center gap-2 text-secondary font-nunito700 text16 text-center">
+              View more about our services{" "}
+              <ArrowRightIcon className="h-4 w-4 text-secondary" />{" "}
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Powering Your Business With Data Analytics */}
       <section className="bg-lightGray py-12per relative">
-        <div className="grid grid-cols-2 px-12per">
-          <div className="col-span-1 px-8per">
-            <h1 className="text-secondary font-sharpsans800 text-32">
-              Powering Your Business With Data Analytics
-            </h1>
-            <p className="flex items-start gap-3 my-2 text14 font-nunito400">
-              <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />{" "}
-              <span>
-                <strong className="font-nunito700">
-                  {" "}
-                  Streamlined logistics management{" "}
-                </strong>
-                in the modern era is only successful when you leverage the right
-                insights. Our SaaS software is enriched with built-in data
-                analytics that shows you relevant information so you can make
-                better decisions.
-              </span>
-            </p>
-            <p className="flex items-start gap-3 my-2 text14 font-nunito400">
-              <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />
-              <span>
-                <strong className="font-nunito700">
-                  {" "}
-                  We enable you to view shipment trends,{" "}
-                </strong>{" "}
-                gauge workforce shipment routing productivity & quality, keep a
-                check on service violations as well as fuel & EV KPI values.
-                This is in addition to an actual and projected route comparison
-                that provides a 360 degree of your processes.
-              </span>
-            </p>
+        <div className="max-w-1440 mx-auto">
+          <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-5 px-12per">
+            <div className="col-span-1 px-8per">
+              <h1 className="text-secondary font-sharpsans800 text-32">
+                Powering Your Business With Data Analytics
+              </h1>
+              <p className="flex items-start gap-3 my-2 text14 font-nunito400">
+                <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />{" "}
+                <span>
+                  <strong className="font-nunito700">
+                    {" "}
+                    Streamlined logistics management{" "}
+                  </strong>
+                  in the modern era is only successful when you leverage the
+                  right insights. Our SaaS software is enriched with built-in
+                  data analytics that shows you relevant information so you can
+                  make better decisions.
+                </span>
+              </p>
+              <p className="flex items-start gap-3 my-2 text14 font-nunito400">
+                <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />
+                <span>
+                  <strong className="font-nunito700">
+                    {" "}
+                    We enable you to view shipment trends,{" "}
+                  </strong>{" "}
+                  gauge workforce shipment routing productivity & quality, keep
+                  a check on service violations as well as fuel & EV KPI values.
+                  This is in addition to an actual and projected route
+                  comparison that provides a 360 degree of your processes.
+                </span>
+              </p>
+            </div>
+            <div className="col-span-1">
+              <Image
+                src={DataAnalyticsSVG}
+                className="w-auto h-auto object-contain"
+                alt="DataAnalyticsSVG"
+              />
+            </div>
           </div>
-          <div className="col-span-1"></div>
-        </div>
 
-        <div className="grid grid-cols-2 px-12per">
-          <div className="col-span-1"></div>
+          <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-5 px-12per pt-5per">
+            <div className="col-span-1 lg:order-1 order-last">
+              <Image
+                src={SchedualMobAppSVG}
+                className="w-auto h-auto object-contain mx-auto"
+                alt="SchedualMobAppSVG"
+              />
+            </div>
 
-          <div className="col-span-1 px-8per">
-            <h1 className="text-secondary font-sharpsans800 text-32">
-              Fully Integrative Mobile App
-            </h1>
-            <p className="flex items-start gap-3 my-2 text14 font-nunito400">
-              <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />{" "}
-              <span>
-                <strong className="font-nunito700">
-                  {" "}
-                  Use your handheld device to manage{" "}
-                </strong>
-                the business in one go! The Cargoe mobile app is built to
-                maximize your convenience through a treasure trove of different
-                features.
-              </span>
-            </p>
-            <p className="flex items-start gap-3 my-2 text14 font-nunito400">
-              <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />
-              <span>
-                <strong className="font-nunito700">
-                  {" "}
-                  You can make the most of easy navigation,{" "}
-                </strong>{" "}
-                access pickup & proof of delivery through electronic signatures,
-                unload/load Scanning, track your shipments through a live GPS,
-                recover assets through scanning, and view scheduled routes.
-              </span>
-            </p>
+            <div className="col-span-1 px-8per lg:order-last order-1">
+              <h1 className="text-secondary font-sharpsans800 text-32">
+                Fully Integrative Mobile App
+              </h1>
+              <p className="flex items-start gap-3 my-2 text14 font-nunito400">
+                <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />{" "}
+                <span>
+                  <strong className="font-nunito700">
+                    {" "}
+                    Use your handheld device to manage{" "}
+                  </strong>
+                  the business in one go! The Cargoe mobile app is built to
+                  maximize your convenience through a treasure trove of
+                  different features.
+                </span>
+              </p>
+              <p className="flex items-start gap-3 my-2 text14 font-nunito400">
+                <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />
+                <span>
+                  <strong className="font-nunito700">
+                    {" "}
+                    You can make the most of easy navigation,{" "}
+                  </strong>{" "}
+                  access pickup & proof of delivery through electronic
+                  signatures, unload/load Scanning, track your shipments through
+                  a live GPS, recover assets through scanning, and view
+                  scheduled routes.
+                </span>
+              </p>
 
-            <p className="flex items-start gap-3 my-2 text14 font-nunito400">
-              <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />
-              <span>
-                <strong className="font-nunito700">Additionally,</strong> you
-                can view & add HOS Logs in accordance with FMCSA regulations.
-              </span>
-            </p>
+              <p className="flex items-start gap-3 my-2 text14 font-nunito400">
+                <CheckIcon className="w-auto h-auto max-w-[20px] text-primary" />
+                <span>
+                  <strong className="font-nunito700">Additionally,</strong> you
+                  can view & add HOS Logs in accordance with FMCSA regulations.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
-
         {/* Spacer */}
         <div className="h-48 w-full"></div>
 
-        <div className="px-12per absolute -bottom-52">
-          <Quotation qoutation="Helping your business to reach it`s maximum potential" />
+        <div className="px-12per w-full absolute -bottom-52">
+          <div className="mx-auto w-full max-w-1440">
+            <Quotation qoutation="Helping your business to reach it`s maximum potential" />
+          </div>
         </div>
       </section>
 
@@ -438,39 +537,45 @@ const HomePage = () => {
         {/* Spacer */}
         <div className="h-48 w-full"></div>
 
-        <h1 className="text-secondary font-sharpsans800 text-40 w-3/5 mx-auto text-center">
+        <h1 className="text-secondary font-sharpsans800 lg:text-40 text-32 lg:w-3/5 w-4/5 mx-auto text-center">
           Want to know more details on how we can help you?{" "}
           <span className="text-primary"> Reach out to us today! </span>
         </h1>
 
-        <div className="flex items-center justify-center gap-3 my-10">
-          {ReactOutOptions.map((item, index) => (
-            <ReachOutCard key={index} {...item} />
-          ))}
+        <div className="w-full flex-center">
+          <div className="scrollbar-hide max-w-1440 mx-auto flex gap-5 overflow-x-auto px-5 py-8">
+            {ReactOutOptions.map((item, index) => (
+              <ReachOutCard key={index} {...item} />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* We offer a multitude of options to suit your business needs */}
-      <section className="grid grid-cols-2 gap-5 px-8per py-8per border-t border-activeTab">
-        <div className="col-span-1 flex flex-col justify-center gap-5 items-start pl-8per pr-12per">
-          <h4 className="text-40 font-sharpsans800 text-secondary">
-            We offer a multitude of options to suit your business needs
-          </h4>
-          <p className="text-16 leading-24 font-nunito700 w-4/5 my-3 text-secondary">
-            In the 21st century digital era, we provide the digital means to
-            handle your every logistics needs.
-          </p>
-          <button className="text-16 leading py-16 px-24 font-nunito700 bg-accent text-secondary rounded-16">
-            Book a Demo
-          </button>
+      <section className="border-t border-activeTab">
+        <div className="max-w-1440 mx-auto grid lg:grid-cols-2 grid-cols-1 gap-5 px-8per py-8per">
+          <div className="col-span-1 flex flex-col justify-center gap-5 items-start pl-8per pr-12per">
+            <h4 className="text-40 font-sharpsans800 text-secondary">
+              We offer a multitude of options to suit your business needs
+            </h4>
+            <p className="text-16 leading-24 font-nunito700 w-4/5 my-3 text-secondary">
+              In the 21st century digital era, we provide the digital means to
+              handle your every logistics needs.
+            </p>
+            <button className="text-16 leading py-16 px-24 font-nunito700 bg-accent text-secondary rounded-16">
+              Book a Demo
+            </button>
+          </div>
+          <div className="col-span-1 ">
+            <DynamicImageWithComponents
+              backgroundImage={CoronaAppScreenSVG}
+              profileImage={DekerLambertSVG}
+              profilerBlurClass="deker-lambert-blured"
+              iconsPositioning="right-[32%]"
+              AvatorComponentProps={AvatarMultitudeComponent}
+            />
+          </div>
         </div>
-        <DynamicImageWithComponents
-          backgroundImage={CoronaAppScreenSVG}
-          profileImage={DekerLambertSVG}
-          profilerBlurClass="deker-lambert-blured"
-          iconsPositioning="right-[32%]"
-          AvatorComponentProps={AvatarMultitudeComponent}
-        />
       </section>
 
       {/* We provide the best and fastest logistics solutions available */}
@@ -480,32 +585,34 @@ const HomePage = () => {
           className="w-full h-full absolute inset-0 z-0 object-cover"
           alt=""
         />
-        <h1 className="text-40 font-sharpsans800 text-light w-3/4 mx-auto text-center relative mb-5 z-10">
-          We provide the best and fastest logistics solutions available
-        </h1>
-        <div className="flex items-center justify-between gap-5 bg-light z-10 relative py-5 px-8 rounded-24">
-          <h5 className="text-secondary text-16 font-nunito700">
-            What are you waiting for?
-          </h5>
-          <div className="flex items-center justify-between p-2 border rounded-16 border-activeTab">
-            <input
-              type="text"
-              className="rounded-16 px-2 placeholder:text-secondary text-16 font-nunito400"
-              placeholder="Your Name"
-            />
-            <ArrowRightIcon className="w-5 h-5 text-secondary" />
+        <div className="max-w-1440 mx-auto">
+          <h1 className="lg:text-40 text-32 font-sharpsans800 text-light lg:w-3/4 w-full mx-auto text-center relative mb-5 z-10">
+            We provide the best and fastest logistics solutions available
+          </h1>
+          <div className="flex items-center max-md:flex-col justify-between gap-5 bg-light z-10 relative py-5 px-8 rounded-24">
+            <h5 className="text-secondary text-16 font-nunito700">
+              What are you waiting for?
+            </h5>
+            <div className="flex items-center justify-between p-2 border rounded-16 border-activeTab">
+              <input
+                type="text"
+                className="rounded-16 px-2 placeholder:text-secondary text-16 font-nunito400"
+                placeholder="Your Name"
+              />
+              <ArrowRightIcon className="w-5 h-5 text-secondary" />
+            </div>
+            <div className="flex items-center justify-between p-2 border rounded-16 border-activeTab">
+              <input
+                type="email"
+                className="rounded-16 px-2 placeholder:text-secondary text-16 font-nunito400"
+                placeholder="E-mail"
+              />
+              <ArrowRightIcon className="w-5 h-5 text-secondary" />
+            </div>
+            <button className="text-16 leading py-3 px-24 font-nunito700 bg-accent text-secondary rounded-16">
+              Contact With Us Now
+            </button>
           </div>
-          <div className="flex items-center justify-between p-2 border rounded-16 border-activeTab">
-            <input
-              type="email"
-              className="rounded-16 px-2 placeholder:text-secondary text-16 font-nunito400"
-              placeholder="E-mail"
-            />
-            <ArrowRightIcon className="w-5 h-5 text-secondary" />
-          </div>
-          <button className="text-16 leading py-3 px-24 font-nunito700 bg-accent text-secondary rounded-16">
-            Contact With Us Now
-          </button>
         </div>
       </section>
     </div>

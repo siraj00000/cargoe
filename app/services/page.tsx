@@ -6,7 +6,6 @@ import {
   CheckIcon,
 } from "@heroicons/react/24/outline";
 import AnalyticsSVG from "@/public/AnalyticsSVG.svg";
-import TopFreightSVG from "@/public/TopFreightSVG.svg";
 import GraphUpSVG from "@/public/GraphUpSVG.svg";
 import ShieldCheckSVG from "@/public/ShieldCheckSVG.svg";
 import FireSVG from "@/public/FireSVG.svg";
@@ -19,10 +18,24 @@ import ComplianceAndClaimsSVG from "@/public/ComplianceAndClaimsSVG.svg";
 import ShipmentBookingSVG from "@/public/ShipmentBookingSVG.svg";
 import EngineerSVG from "@/public/EngineerSVG.svg";
 import AppActivesSVG from "@/public/AppActivesSVG.svg";
+import WorldMapSVG from "@/public/WorldMap.svg";
+import PersonOne from "@/public/PersonOne.svg";
+import PersonOneCompany from "@/public/PersonOneCompany.svg";
+import PersonTwo from "@/public/PersonTwo.svg";
+import PersonTwoCompany from "@/public/PersonTwoCompany.svg";
+import PersonThreeCompany from "@/public/PersonThreeCompany.svg";
+import PersonThree from "@/public/PersonThree.svg";
+import FrankSmartSVG from "@/public/FrankSmart.svg";
+import ContainerSVG from "@/public/ContainerSVG.svg";
 import Quotation from "@/components/Quotation";
-import { FeaturesProps, StatisticscomponentProps } from "@/types/index.types";
+import {
+  AvatorComponentProps,
+  FeaturesProps,
+  StatisticscomponentProps,
+} from "@/types/index.types";
 import StatisticsComponent from "@/components/StatisticsComponent";
 import Features from "@/components/Features";
+import DynamicImageWithComponents from "@/components/DynamicImageWithComponents";
 
 const statistics: StatisticscomponentProps[] = [
   {
@@ -47,6 +60,31 @@ const statistics: StatisticscomponentProps[] = [
   },
 ];
 
+const AvatarCustomerComponent: AvatorComponentProps[] = [
+  {
+    blurBg: "blured-bg-1",
+    name: "Danny Ecroyd",
+    designation: "Shop director",
+    companyLogo: PersonThreeCompany,
+    profilePic: PersonThree,
+  },
+  {
+    blurBg: "blured-bg-2",
+    name: "Victoria Summer",
+    designation: "Coordinator of products",
+    profilePic: PersonTwo,
+    companyLogo: PersonTwoCompany,
+  },
+  {
+    blurBg: "blured-bg-3",
+    name: "Frank Smart",
+    designation: "Logistics Manager",
+    companyLogo: PersonOneCompany,
+    profilePic: PersonOne,
+    designationTextColor: "text-activeTab",
+  },
+];
+
 const featuresList: FeaturesProps[] = [
   { Icon: SaveTimeSVG, title: "Scalability" },
   { Icon: FleetManagementSVG, title: "Lower Cost Management" },
@@ -58,60 +96,64 @@ const ServicesPage = () => {
   return (
     <div>
       {/* Third-Party Logistics Or 3PL */}
-      <section className="grid lg:grid-cols-1 grid-cols-1 py-5per bg-lightGray">
-        <div className="flex flex-col text-start justify-center col-span-1 px-12per">
-          <h6 className="text-activeTab text16 font-sharpsans700">
-            Cargo Ink. Customer Services
-          </h6>
-          <h1 className="text-secondary  lg:text-56 md:text-40 text-24 font-sharpsans800">
-            Third-Party Logistics Or 3PL
-          </h1>
-          <div className="flex items-center w-full gap-5 mt-4">
-            <button className=" text-16 leading py-16 px-24 max-w-150 w-full my-5 font-nunito700 bg-accent text-secondary rounded-16">
-              Book a Demo
-            </button>
-            <button className="flex items-center py-16 px-24 w-full gap-3 text16 font-nunito700 text-secondary">
-              Contact Us <ArrowRightIcon className="text-primary w-6 h-6" />
-            </button>
+      <section className="bg-lightGray">
+        <div className="max-w-1440 mx-auto grid lg:grid-cols-1 grid-cols-1 py-5per">
+          <div className="flex flex-col text-start justify-center col-span-1 px-12per">
+            <h6 className="text-activeTab text16 font-sharpsans700">
+              Cargo Ink. Customer Services
+            </h6>
+            <h1 className="text-secondary  lg:text-56 md:text-40 text-24 font-sharpsans800">
+              Third-Party Logistics Or 3PL
+            </h1>
+            <div className="flex items-center w-full gap-5 mt-4">
+              <button className=" text-16 leading py-16 px-24 max-w-150 w-full my-5 font-nunito700 bg-accent text-secondary rounded-16">
+                Book a Demo
+              </button>
+              <button className="flex items-center py-16 px-24 w-full gap-3 text16 font-nunito700 text-secondary">
+                Contact Us <ArrowRightIcon className="text-primary w-6 h-6" />
+              </button>
+            </div>
           </div>
-        </div>
 
-        <div className="col-span-1">
-          <Image
-            src={AnalyticsSVG}
-            className="w-auto h-auto object-contain lg:mx-0 mx-auto"
-            alt="AnalyticsSVG"
-          />
-        </div>
+          <div className="col-span-1">
+            <Image
+              src={AnalyticsSVG}
+              className="w-auto h-auto object-contain lg:mx-0 mx-auto"
+              alt="AnalyticsSVG"
+            />
+          </div>
 
-        <div className="lg:col-span-2 col-span-1 grid lg:grid-cols-2 grid-cols-1 gap-20 py-10 lg:px-0 px-8per">
-          <p className="grid grid-cols-1 lg:w-3/5 lg:ml-auto text14 font-nunito400 text-secondary">
-            Take your 3PL business to new heights by providing the most
-            resilient logistics solutions to different companies in all types of
-            industries. Customers today aren’t ready to settle for subpar
-            logistics businesses that is why you need to make sure that yours is
-            the best.
-          </p>
-          <p className="grid grid-cols-1 lg:w-4/5 text14 font-nunito400 text-activeTab">
-            With Cargoe Inc., you can boost employee productivity, reduce
-            redundancies and maximize the benefits through inventory and
-            warehouse management, shipments, and IT. Moreover, you can also
-            expand your network of logistics service providers, be it locally or
-            internationally, as well as remain incompliance with Department of
-            Homeland Security & Department of Transportation requirements,
-            United States-Mexico-Canada Agreement, and International Commercial
-            Terms requirements.
-          </p>
+          <div className="lg:col-span-2 col-span-1 grid lg:grid-cols-2 grid-cols-1 gap-20 py-10 lg:px-0 px-8per">
+            <p className="grid grid-cols-1 lg:w-3/5 lg:ml-auto text14 font-nunito400 text-secondary">
+              Take your 3PL business to new heights by providing the most
+              resilient logistics solutions to different companies in all types
+              of industries. Customers today aren’t ready to settle for subpar
+              logistics businesses that is why you need to make sure that yours
+              is the best.
+            </p>
+            <p className="grid grid-cols-1 lg:w-4/5 text14 font-nunito400 text-activeTab">
+              With Cargoe Inc., you can boost employee productivity, reduce
+              redundancies and maximize the benefits through inventory and
+              warehouse management, shipments, and IT. Moreover, you can also
+              expand your network of logistics service providers, be it locally
+              or internationally, as well as remain incompliance with Department
+              of Homeland Security & Department of Transportation requirements,
+              United States-Mexico-Canada Agreement, and International
+              Commercial Terms requirements.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Top freight forwarders today are seamlessly integrated with technology. */}
-      <section className="grid lg:grid-cols-2 grid-cols-1 gap-10 px-12per py-8per">
+      <section className="max-w-1440 mx-auto grid lg:grid-cols-2 grid-cols-1 gap-10 px-12per py-8per">
         <div className="col-span-1">
-          <Image
-            src={TopFreightSVG}
-            className="w-auto h-auto object-contain"
-            alt="TopFreightSVG"
+          <DynamicImageWithComponents
+            backgroundImage={ContainerSVG}
+            profileImage={FrankSmartSVG}
+            profilerBlurClass="blured"
+            iconsPositioning="right-[18%]"
+            AvatorComponentProps={AvatarCustomerComponent}
           />
         </div>
         <div className="col-span-1 flex flex-col items-start pt-10">
@@ -140,7 +182,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Statistics */}
-      <section className="p-12per pt-0 flex flex-wrap items-start justify-between gap-5">
+      <section className="max-w-1440 mx-auto p-12per pt-0 flex flex-wrap items-start justify-between gap-5">
         {statistics.map((stats, index) => (
           <StatisticsComponent key={index} {...stats} />
         ))}
@@ -166,45 +208,47 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/*  */}
-      <section className="bg-lightRed grid lg:grid-cols-2 grid-cols-1 gap-10 px-12per pt-5per lg:pb-0 pb-5per">
-        <div className="col-span-1 relative">
-          <Image
-            src={AppActivesSVG}
-            alt="AppActivesSVG"
-            className="w-auto h-auto object-contain absolute -left-10 top-14 z-10"
-          />
-          <Image
-            src={ShipmentBookingSVG}
-            className="w-auto h-auto object-contain"
-            alt="ShipmentBookingSVG"
-          />
-          <Image
-            src={EngineerSVG}
-            className="w-auto h-auto object-contain absolute bottom-0 right-8"
-            alt="EngineerSVG"
-          />
-        </div>
-        <div className="col-span-1 pt-5per">
-          <h1 className="text-32 text-secondary font-sharpsans700">
-            Lower Cost Management
-          </h1>
-          <p className="text14 text-secondary font-nunito400">
-            Rising costs are often due to an ineffective resource management
-            strategy or inefficient time management. When you leverage our
-            platform, however, both time and effort expended by your employees
-            will reduce. Not just that but our users also report lower costs
-            after joining the platform!
-          </p>
-          <p className="text14 text-secondary font-nunito700 flex items-center gap-2 mt-8per">
-            View more about our services{" "}
-            <ArrowLongRightIcon className="w-5 h-5 text-secondary" />
-          </p>
+      {/* Lower Cost Management */}
+      <section className="bg-lightRed">
+        <div className="max-w-1440 mx-auto w-full grid lg:grid-cols-2 grid-cols-1 gap-10 px-12per pt-5per lg:pb-0 pb-5per">
+          <div className="col-span-1 relative">
+            <Image
+              src={AppActivesSVG}
+              alt="AppActivesSVG"
+              className="w-auto h-auto object-contain absolute -left-10 top-14 z-10"
+            />
+            <Image
+              src={ShipmentBookingSVG}
+              className="w-auto h-auto object-contain"
+              alt="ShipmentBookingSVG"
+            />
+            <Image
+              src={EngineerSVG}
+              className="w-auto h-auto object-contain absolute bottom-0 right-8"
+              alt="EngineerSVG"
+            />
+          </div>
+          <div className="col-span-1 pt-5per">
+            <h1 className="text-32 text-secondary font-sharpsans700">
+              Lower Cost Management
+            </h1>
+            <p className="text14 text-secondary font-nunito400">
+              Rising costs are often due to an ineffective resource management
+              strategy or inefficient time management. When you leverage our
+              platform, however, both time and effort expended by your employees
+              will reduce. Not just that but our users also report lower costs
+              after joining the platform!
+            </p>
+            <p className="text14 text-secondary font-nunito700 flex items-center gap-2 mt-8per">
+              View more about our services{" "}
+              <ArrowLongRightIcon className="w-5 h-5 text-secondary" />
+            </p>
+          </div>
         </div>
       </section>
 
       {/*  */}
-      <section className="px-8per py-12per">
+      <section className="max-w-1440 mx-auto px-8per py-12per">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
           <div className="bg-lightGray rounded-40 border-4 border-light w-full shadow-3xl  text-right p-5per">
             <button className="text-12 font-nunito700 text-activeTab p-2 rounded-md bg-light">
@@ -302,7 +346,6 @@ const ServicesPage = () => {
               </p>
             </div>
 
-           
             <div className="flex items-start gap-2 col-span-1">
               <CheckIcon className="w-16 h-16 text-primary" />
               <p className="text-14 text-activeTab font-nunito700">
@@ -319,7 +362,7 @@ const ServicesPage = () => {
       </section>
 
       {/*  */}
-      <section className="relative grid lg:grid-cols-2 grid-cols-1 px-12per py-8per">
+      <section className="relative grid lg:grid-cols-2 grid-cols-1 px-12per py-8per z-10">
         <Image
           src={PlaneBgSVG}
           className="absolute inset-0 z-0 w-full h-full object-cover object-top"
@@ -348,6 +391,15 @@ const ServicesPage = () => {
             Contact Us Now
           </button>
         </div>
+      </section>
+
+      {/*  */}
+      <section className="overflow-hidden">
+        <Image
+          src={WorldMapSVG}
+          className="w-full h-full object-contain relative lg:bottom-48 bottom-20"
+          alt=""
+        />
       </section>
     </div>
   );

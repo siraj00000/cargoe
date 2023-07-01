@@ -63,7 +63,7 @@ export default function Example() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start gap-28">
-                <div className="flex flex-shrink-0 items-center">
+                <Link href={'/'} className="flex flex-shrink-0 items-center">
                   <Image
                     className="block w-auto h-auto lg:hidden"
                     width={132}
@@ -78,7 +78,7 @@ export default function Example() {
                     alt="Cargo Navbar Logo"
                     priority
                   />
-                </div>
+                </Link>
                 <div className="hidden sm:ml-6 md:block">
                   <div className="flex space-x-5">
                     {navigation.map((item) => (

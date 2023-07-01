@@ -42,7 +42,7 @@ const DynamicImageWithComponents: React.FC<DynamicImageWithComponentsProps> = ({
   AvatorComponentProps,
 }) => {
   return (
-    <div className="col-span-1 relative">
+    <div className="relative max-w-524">
       <Image
         src={backgroundImage}
         className="w-auto h-auto object-cover"

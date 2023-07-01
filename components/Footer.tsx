@@ -11,11 +11,11 @@ const navigationLink = [
     links: [
       {
         name: "Blog",
-        link: "/blog",
+        link: "/",
       },
       {
         name: "About Us",
-        link: "/",
+        link: "/about-us",
       },
       {
         name: "Brand",
@@ -27,11 +27,11 @@ const navigationLink = [
       },
       {
         name: "Terms",
-        link: "/",
+        link: "https://cargoe.io/terms-of-use/",
       },
       {
         name: "Privacy",
-        link: "/",
+        link: "https://cargoe.io/privacy-policy/",
       },
     ],
   },
@@ -118,9 +118,9 @@ const Footer = () => {
             Subscribe to our newsletter
           </p>
           <div className="flex items-center space-x-1 text12 font-nunito700 text-greenish">
-            <Link href="/">Privacy</Link>
+            <Link href="https://cargoe.io/privacy-policy/">Privacy</Link>
             <span>/</span>
-            <Link href="/">Terms</Link>
+            <Link href="https://cargoe.io/terms-of-use/">Terms</Link>
             <span>/</span>
             <Link href="/">Our Blog</Link>
             <span>/</span>
