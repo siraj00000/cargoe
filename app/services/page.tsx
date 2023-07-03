@@ -3,7 +3,6 @@ import React from "react";
 import {
   ArrowLongRightIcon,
   ArrowRightIcon,
-  CheckIcon,
 } from "@heroicons/react/24/outline";
 import AnalyticsSVG from "@/public/AnalyticsSVG.svg";
 import GraphUpSVG from "@/public/GraphUpSVG.svg";
@@ -27,6 +26,7 @@ import PersonThreeCompany from "@/public/PersonThreeCompany.svg";
 import PersonThree from "@/public/PersonThree.svg";
 import FrankSmartSVG from "@/public/FrankSmart.svg";
 import ContainerSVG from "@/public/ContainerSVG.svg";
+import CheckMarkSVG from "@/public/CheckMarkSVG.svg";
 import Quotation from "@/components/Quotation";
 import {
   AvatorComponentProps,
@@ -36,6 +36,7 @@ import {
 import StatisticsComponent from "@/components/StatisticsComponent";
 import Features from "@/components/Features";
 import DynamicImageWithComponents from "@/components/DynamicImageWithComponents";
+import Link from "next/link";
 
 const statistics: StatisticscomponentProps[] = [
   {
@@ -97,8 +98,8 @@ const ServicesPage = () => {
     <div>
       {/* Third-Party Logistics Or 3PL */}
       <section className="bg-lightGray">
-        <div className="max-w-1440 mx-auto grid lg:grid-cols-1 grid-cols-1 py-5per">
-          <div className="flex flex-col text-start justify-center col-span-1 px-12per">
+        <div className="max-w-1440 mx-auto grid lg:grid-cols-1 grid-cols-1 py-12per">
+          <div className="flex flex-col text-start justify-center col-span-1 md:px-12per px-8per">
             <h6 className="text-activeTab text16 font-sharpsans700">
               Cargo Ink. Customer Services
             </h6>
@@ -106,12 +107,12 @@ const ServicesPage = () => {
               Third-Party Logistics Or 3PL
             </h1>
             <div className="flex items-center w-full gap-5 mt-4">
-              <button className=" text-16 leading py-16 px-24 max-w-150 w-full my-5 font-nunito700 bg-accent text-secondary rounded-16">
+              <Link href="/contact-us" className=" text-center text-16 leading py-16 lg:px-24 px-0 max-w-150 w-full my-5 font-nunito700 bg-accent text-secondary rounded-16">
                 Book a Demo
-              </button>
-              <button className="flex items-center py-16 px-24 w-full gap-3 text16 font-nunito700 text-secondary">
+              </Link>
+              <Link href="/contact-us" className="flex items-center py-16 lg:px-24 px-0 w-full gap-3 text16 font-nunito700 text-secondary">
                 Contact Us <ArrowRightIcon className="text-primary w-6 h-6" />
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -157,7 +158,7 @@ const ServicesPage = () => {
           />
         </div>
         <div className="col-span-1 flex flex-col items-start pt-10">
-          <h1 className="text-32 font-sharpsans800 text-secondary">
+          <h1 className="md:text-32 text-24 font-sharpsans800 text-secondary">
             <span className="text-primary">Top freight forwarders today</span>{" "}
             are seamlessly integrated with technology.
           </h1>
@@ -177,7 +178,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Qoutation */}
-      <section className="p-12per">
+      <section className="md:p-12per p-8per">
         <Quotation qoutation="Helping your business to reach it`s maximum potential" />
       </section>
 
@@ -188,13 +189,13 @@ const ServicesPage = () => {
         ))}
       </section>
 
-      {/*  */}
+      {/* Modern Freight Forwarders have to face various challenges */}
       <section className="pt-8per border-t border-activeTab lg:px-0 px-8per">
-        <h1 className="text-secondary font-sharpsans800 lg:text-40 text-32 text-center">
+        <h1 className="text-secondary font-sharpsans800 lg:text-40 md:text-32 text-24 text-center">
           Modern Freight Forwarders <br />{" "}
           <span className="text-primary">have to face various challenges</span>
         </h1>
-        <p className="text14 md:w-3/5 w-full mx-auto text-center my-2">
+        <p className="text-16 leading-24 md:w-3/5 w-full mx-auto text-center my-2">
           To reap real success, you must practice resilience within every aspect
           of your operations. Be it distribution solutions for your top B2B
           client or fulfillment services, 3PLs have a lot to handle. At Cargoe,
@@ -211,7 +212,7 @@ const ServicesPage = () => {
       {/* Lower Cost Management */}
       <section className="bg-lightRed">
         <div className="max-w-1440 mx-auto w-full grid lg:grid-cols-2 grid-cols-1 gap-10 px-12per pt-5per lg:pb-0 pb-5per">
-          <div className="col-span-1 relative">
+          <div className="col-span-1 relative md:h-auto h-400">
             <Image
               src={AppActivesSVG}
               alt="AppActivesSVG"
@@ -229,7 +230,7 @@ const ServicesPage = () => {
             />
           </div>
           <div className="col-span-1 pt-5per">
-            <h1 className="text-32 text-secondary font-sharpsans700">
+            <h1 className="md:text-32 text-24 text-secondary font-sharpsans700">
               Lower Cost Management
             </h1>
             <p className="text14 text-secondary font-nunito400">
@@ -247,7 +248,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/*  */}
+      {/* Shippers and Carriers */}
       <section className="max-w-1440 mx-auto px-8per py-12per">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
           <div className="bg-lightGray rounded-40 border-4 border-light w-full shadow-3xl  text-right p-5per">
@@ -294,8 +295,8 @@ const ServicesPage = () => {
         </div>
 
         <div className="grid lg:grid-cols-5 grid-cols-1 mt-8per gap-10">
-          <div className="col-span-2 border-r-2 border-[#F7F7F7]">
-            <h1 className="lg:text-40 text-32 text-secondary font-sharpsans800">
+          <div className="col-span-2 md:border-r-2 border-[#F7F7F7]">
+            <h1 className="lg:text-40 md:text-32 text-24 text-secondary font-sharpsans800">
               Cartage Agents & Couriers
             </h1>
             <p className="text-14 text-secondary font-nunito400 lg:w-4/5">
@@ -307,9 +308,13 @@ const ServicesPage = () => {
               overall operations. Needless to say, our ERP software:
             </p>
           </div>
-          <div className="col-span-3 grid lg:grid-cols-2 grid-cols-1 grid-rows-2 gap-5">
+          <div className="col-span-3 grid lg:grid-cols-2 grid-cols-1 grid-rows-2 gap-2">
             <div className="flex items-start gap-2 col-span-1">
-              <CheckIcon className="w-16 h-16 text-primary" />
+              <Image
+                src={CheckMarkSVG}
+                className="w-auto h-auto object-contain relative top-1"
+                alt="CheckMarkSVG"
+              />
               <p className="text-14 text-activeTab font-nunito700">
                 <span className="text-secondary font-nunito700">
                   {" "}
@@ -321,9 +326,13 @@ const ServicesPage = () => {
             </div>
 
             <div className="flex items-start gap-2 col-span-1">
-              <CheckIcon className="w-16 h-16 text-primary" />
+              <Image
+                src={CheckMarkSVG}
+                className="w-auto h-auto object-contain relative top-1"
+                alt="CheckMarkSVG"
+              />
               <p className="text-14 text-activeTab font-nunito700">
-                <span className="text-secondary font-nunito700">
+                <span className="text-secondary">
                   {" "}
                   Ensures end-to-end management
                 </span>{" "}
@@ -333,7 +342,11 @@ const ServicesPage = () => {
             </div>
 
             <div className="flex items-start gap-2 col-span-1">
-              <CheckIcon className="w-24 h-24 text-primary" />
+              <Image
+                src={CheckMarkSVG}
+                className="w-auto h-auto object-contain relative top-1"
+                alt="CheckMarkSVG"
+              />
               <p className="text-14 text-activeTab font-nunito700">
                 <span className="text-secondary font-nunito700">
                   {" "}
@@ -347,7 +360,11 @@ const ServicesPage = () => {
             </div>
 
             <div className="flex items-start gap-2 col-span-1">
-              <CheckIcon className="w-16 h-16 text-primary" />
+              <Image
+                src={CheckMarkSVG}
+                className="w-auto h-auto object-contain relative top-1"
+                alt="CheckMarkSVG"
+              />
               <p className="text-14 text-activeTab font-nunito700">
                 <span className="text-secondary font-nunito700">
                   {" "}
@@ -361,7 +378,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/*  */}
+      {/* Indirect Air Carriers & Authorized Representatives */}
       <section className="relative grid lg:grid-cols-2 grid-cols-1 px-12per py-8per z-10">
         <Image
           src={PlaneBgSVG}
@@ -370,10 +387,10 @@ const ServicesPage = () => {
         />
         <div className="col-span-1 md:h-0 h-300"></div>
         <div className="col-span-1 flex flex-col items-start justify-center z-10">
-          <h1 className="lg:text-40 text-32 font-sharpsans800 text-light">
+          <h1 className="lg:text-40 md:text-32 text-24 font-sharpsans800 text-light">
             Indirect Air Carriers & Authorized Representatives
           </h1>
-          <p className="text14 font-nunito400 text-light my-5">
+          <p className="text-16 leading-24 font-nunito400 text-light my-5">
             Our cloud-based software is best suited to IACs operating inside the
             United States without an official FAA certificate. Our ERP system
             supports your business model so you can manage Air Cargo
@@ -393,11 +410,11 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/*  */}
+      {/* World Map */}
       <section className="overflow-hidden">
         <Image
           src={WorldMapSVG}
-          className="w-full h-full object-contain relative lg:bottom-48 bottom-20"
+          className="w-full h-full object-contain relative lg:bottom-48 md:bottom-20 bottom-12"
           alt=""
         />
       </section>

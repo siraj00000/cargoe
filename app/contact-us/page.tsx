@@ -31,7 +31,7 @@ const InputComponent: React.FC<InputComponentTypes> = ({ inputProps }) => (
   />
 );
 
-const GIRL_IMAGE_URL = `https://res.cloudinary.com/duyspylge/image/upload/v1688132255/Cargo-Project-Assets/GirlSVG_e3n270.svg`;
+const GIRL_IMAGE_URL = `https://res.cloudinary.com/duyspylge/image/upload/v1688134227/Cargo-Project-Assets/girl_3_qn5mgn.svg`;
 
 const ContactUsPage = () => {
   return (
@@ -86,7 +86,7 @@ const ContactUsPage = () => {
               {formInputList.map((input, index) => (
                 <InputComponent key={index} inputProps={input} />
               ))}
-              <button className="text-16 leading py-16 px-24 max-w-200 w-full my-5 font-nunito700 bg-accent text-secondary rounded-16">
+              <button className="text-16 leading py-16 md:px-24 px-5 max-w-200 w-full my-5 font-nunito700 bg-accent text-secondary rounded-16">
                 Send Message
               </button>
             </form>
@@ -100,8 +100,8 @@ const ContactUsPage = () => {
               out your information and we’ll get the conversation started
               immediately.
             </p>
-            <div className="flex items-start gap-4 my-5">
-              <div className="w-1/3">
+            <div className="flex items-start md:flex-nowrap flex-wrap gap-4 md:my-5 my-10">
+              <div className="md:w-1/3 w-full">
                 <Image src={MapPointSVG} alt="Marker" />
                 <p className="text-14 text-secondary font-nunito700">
                   1401 21ST STREET SUITE R SACRAMENTO CA 95811

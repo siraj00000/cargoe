@@ -65,7 +65,7 @@ const aboutus = () => {
                 className="w-5 h-5 object-contain mb-2"
                 alt="BoltSVG"
               />
-              <p className="text16 text-secondary font-nunito400">
+              <p className="text-16 text-secondary font-nunito400">
                 We bridge the connectivity gap so you never have to wait for
                 your big break. <br /> <br />
                 <span className="text-activeTab">
@@ -82,7 +82,7 @@ const aboutus = () => {
                 className="w-5 h-5 object-contain mb-2"
                 alt="FireSVG"
               />
-              <p className="text16 text-secondary font-nunito400">
+              <p className="text-16 text-secondary font-nunito400">
                 We bridge the connectivity gap so you never have to wait for
                 your big break. <br /> <br />
                 <span className="text-activeTab">
@@ -93,11 +93,27 @@ const aboutus = () => {
                 </span>
               </p>
             </div>
-            <div className="flex lg:flex-col items-center gap-2 col-span-1">
-              <Image src={TruckSupplingSVG} className="w-auto h-auto" alt="TruckSupplingSVG" />
-              <Image src={TrainSupplingSVG} className="w-auto h-auto" alt="TrainSupplingSVG" />
-              <Image src={PlaneSupplingSVG} className="w-auto h-auto" alt="PlaneSupplingSVG" />
-              <Image src={ShipSupplingSVG} className="w-auto h-auto" alt="ShipSupplingSVG" />
+            <div className="flex lg:flex-col items-center md:flex-nowrap flex-wrap md:gap-2 gap-0 col-span-1 w-full">
+              <Image
+                src={TruckSupplingSVG}
+                className="w-auto h-auto object-contain"
+                alt="TruckSupplingSVG"
+              />
+              <Image
+                src={TrainSupplingSVG}
+                className="w-auto h-auto object-contain"
+                alt="TrainSupplingSVG"
+              />
+              <Image
+                src={PlaneSupplingSVG}
+                className="w-auto h-auto object-contain"
+                alt="PlaneSupplingSVG"
+              />
+              <Image
+                src={ShipSupplingSVG}
+                className="w-auto h-auto object-contain"
+                alt="ShipSupplingSVG"
+              />
             </div>
           </div>
         </div>

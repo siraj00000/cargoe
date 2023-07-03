@@ -10,7 +10,7 @@ const StatisticsComponent: React.FC<StatisticscomponentProps> = ({
   return (
     <article className="">
       <Image src={Icon} className="w-auto h-auto object-contain" alt="Icon" />
-      <h4 className="lg:text-80 text-40 font-sharpsans800 text-secondary">{count}</h4>
+      <h4 className="lg:text-80 md:text-40 text-56 font-sharpsans800 text-secondary">{count}</h4>
       <p className="text16 text-center text-activeTab font-nunito400 uppercase">{category}</p>
     </article>
   );

@@ -9,10 +9,12 @@ import {
   nunito700,
   nunito800,
 } from "@/styles/fonts";
+import { Metadata } from "next";
+import CookieBanner from "@/components/CookieBanner";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Cargo",
-  description: "developed by msiraj",
+  description: "developed by msiraj"
 };
 
 export default function RootLayout({
@@ -25,10 +27,11 @@ export default function RootLayout({
       lang="en"
       className={`${nunito400.variable} ${nunito700.variable} ${nunito800.variable} ${SharpSans800.variable} ${SharpSans500.variable} ${SharpSans700.variable}`}
     >
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} className="relative">
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

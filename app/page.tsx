@@ -9,9 +9,6 @@ import FleetManagementSVG from "@/public/FleetManagementSVG.svg";
 import StreamLinedFinancingSVG from "@/public/StreamLinedFinancingSVG.svg";
 import RealTimeTrackingSVG from "@/public/RealTimeTrackingSVG.svg";
 import ComplianceAndClaimsSVG from "@/public/ComplianceAndClaimsSVG.svg";
-import AppSnapSVG from "@/public/AppSnapSVG.svg";
-import AppActivesSVG from "@/public/AppActivesSVG.svg";
-import FileLady from "@/public/FileLady.svg";
 import TruckSVG from "@/public/TruckSVG.svg";
 import RailSVG from "@/public/RailSVG.svg";
 import ShipSVG from "@/public/ShipSVG.svg";
@@ -35,9 +32,12 @@ import AirFrightCard from "@/public/AirFrightCard.svg";
 import RailFrightCard from "@/public/RailFrightCard.svg";
 import DataAnalyticsSVG from "@/public/DataAnalyticsSVG.svg";
 import SchedualMobAppSVG from "@/public/SchedualMobAppSVG.svg";
-
 import CoronaAppScreenSVG from "@/public/CoronaAppScreenSVG.svg";
 import { ArrowRightIcon, CheckIcon } from "@heroicons/react/24/outline";
+import FileLadyPNG from "@/public/png/FileLady.jpg";
+// import AppSnapSVG from "@/public/AppSnapSVG.svg";
+// import AppActivesSVG from "@/public/AppActivesSVG.svg";
+// import FileLady from "@/public/FileLady.svg";
 import VideoPlayer from "@/components/VideoPlayer";
 import Features from "@/components/Features";
 import Quotation from "@/components/Quotation";
@@ -163,9 +163,9 @@ const AvatarMultitudeComponent: AvatorComponentProps[] = [
  * Displays the main content of the home page.
  * @returns {JSX.Element} The rendered home page component.
  */
-const HomePage = () => {
+const HomePage = (): JSX.Element => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative bg-lightGray pb-20">
         <div className="max-md:hidden lg:h-300 bg-light absolute top-0 inset-0"></div>
@@ -220,51 +220,45 @@ const HomePage = () => {
           </div>
 
           {/* Hero Section Mobile */}
-          <div className="md:hidden block relative bg-primary">
-            <div className="w-full p-8per relative top-20 h-300 z-10">
-              <h4 className="text-white font-sharpsans800 text-40 w-4/5">
+          <div className="md:hidden block relative bg-primary p-8per pt-12per z-0">
+            <div className="w-full ">
+              <h4 className="text-white font-sharpsans800 lg:text-40 md:text-32 text-24 md:w-4/5 w-full">
                 Third-party logistics, 3PL & Freight Forwader
               </h4>
+              <Image
+                src={ShipBgSVG}
+                className="w-full h-auto object-contain my-5"
+                alt=""
+              />
               <p className="text-white text-16 leading-24 font-nunito400 mt-4">
                 Transform your logistics processes with Cargoe to explore a
                 hidden world of opportunities you won’t find elsewhere.
               </p>
-              <div className="flex-between rounded-16 border border-light mt-8">
+              <div className="flex items-center justify-between rounded-16 border border-light mt-8">
                 <input
                   type="email"
                   name="email"
                   placeholder="E-mail"
-                  className="bg-transparent placeholder:text-light px-8 tex16 font-nunito400"
+                  className="bg-transparent placeholder:text-light md:text-16 text-12 font-nunito400 px-2"
                 />
-                <button className="bg-accent rounded-xl text-secondary font-nunito700 py-3 px-5">
+                <button className="bg-accent rounded-xl md:text-16 text-12 leading-16 tracking-[.32px] text-secondary font-nunito700 py-3 md:px-5 px-3 w-max">
                   Get Started
                 </button>
               </div>
-            </div>
 
-            <div className="w-full relative px-8per">
-              <Image
-                src={ShipBgSVG}
-                className="w-full h-auto object-contain relative top-60 z-0 "
-                alt=""
-              />
-              <Image
-                src={HeroMenSVG}
-                className="w-auto h-auto object-contain relative left-20 z-10"
-                alt=""
-              />
+              <div className="h-32 relative z-0" />
             </div>
           </div>
 
-          {/* Cargo Cards */}
+          {/* Desktop Cargo Cards */}
           <div className="max-w-1440 mx-auto max-md:hidden w-full flex items-center justify-center px-8per relative h-auto md:-top-32 z-30 gap-5">
             {ThirdPartyLogistics.map((item, index) => (
               <CargosCard key={index} {...item} />
             ))}
           </div>
 
-          {/* Cargo Cards */}
-          <div className="lg:hidden block w-full overflow-x-auto px-2 scrollbar-hide relative -top-20 z-10">
+          {/* Mobile Cargo Cards */}
+          <div className="lg:hidden block w-full overflow-x-auto px-2 py-10 scrollbar-hide relative -top-32 z-20">
             <div className="flex items-center gap-5 w-full overflow-x-scroll pb-10  scrollbar-hide">
               {ThirdPartyLogistics.map((item, index) => (
                 <CargosCard key={index} {...item} />
@@ -276,8 +270,8 @@ const HomePage = () => {
             Digital Redesign contain two columns 
           */}
           <div className="max-w-1440 mx-auto grid lg:grid-cols-2 grid-cols-1 px-8per">
-            <div className="pt-20per col-span-1">
-              <h4 className="text-40 font-sharpsans800 text-primary">
+            <div className="md:pt-20per col-span-1">
+              <h4 className="lg:text-40 md:text-32 text-24 font-sharpsans800 text-primary">
                 Digitally Redesigned <br />{" "}
                 <span className="text-secondary">
                   Logistics For Maximum Benefits
@@ -291,11 +285,11 @@ const HomePage = () => {
                 Book a Demo
               </button>
             </div>
-            <div className="col-span-1 relative lg:h-full h-400">
-              <div className="h-400 w-auto absolute inset-0">
+            <div className="col-span-1 relative lg:h-full md:h-400 h-300">
+              <div className="h-400 w-auto absolute inset-0 -top-12">
                 <Image
                   src={LaptopSVG}
-                  className="w-full h-full object-cover scale-125"
+                  className="w-full h-full sm:object-cover object-contain sm:scale-150 scale-150"
                   alt="laptopSVG"
                 />
               </div>
@@ -317,7 +311,7 @@ const HomePage = () => {
         </div>
 
         <div className="col-span-1 flex flex-col justify-center items-start lg:order-last order-1">
-          <h4 className="text-40 font-sharpsans800 text-primary">
+          <h4 className="lg:text-40 md:text-32 text-24 font-sharpsans800 text-primary">
             {`Meet Your Customers'`} <br />{" "}
             <span className="text-secondary">Ever-Changing</span> Needs
           </h4>
@@ -341,12 +335,12 @@ const HomePage = () => {
       {/* Why It’s High Time Your Company Goes Digital */}
       <section className="grid lg:grid-cols-2 grid-cols-1s w-full">
         <div className="col-span-1 px-12per py-28">
-          <h1 className="text-secondary font-sharpsans800 text-40">
+          <h1 className="lg:text-40 md:text-32 text-24 text-secondary font-sharpsans800">
             Why It’s High Time Your Company Goes Digital
           </h1>
           <h6 className="text16 my-2">Let us take the load of your hands</h6>{" "}
           <br />
-          <p className="text14 font-nunito400">
+          <p className="text-16 leading-24 font-nunito400">
             <span className="font-nunito700">Logistics management </span> has
             intricate complexities but this doesn’t mean it is impossible. Your
             partners and employees are actively looking for better ways to run
@@ -369,12 +363,12 @@ const HomePage = () => {
       </section>
 
       {/* Our Online Marketplace Ensures Your Success */}
-      <section className="lg:p-0 lg:pt-8per p-8per">
-        <h1 className="text-secondary font-sharpsans800 text-40 text-center">
+      <section className="lg:p-0 lg:pt-8per p-8per pt-12per">
+        <h1 className="lg:text-40 md:text-32 text-24 text-secondary font-sharpsans800 text-center">
           Our Online Marketplace <br />{" "}
           <span className="text-primary">Ensures Your Success</span>
         </h1>
-        <p className="text14 md:w-3/5 w-full mx-auto text-center my-2">
+        <p className="text-16 leading-24 md:w-3/5 w-full mx-auto text-center my-2">
           An efficient supply chain is the lifeblood of any business, and you
           certainly cannot afford to go wrong with any of it. Thus, we help you
           overcome the bumps in the road by strengthening your core competency,
@@ -388,28 +382,35 @@ const HomePage = () => {
       </section>
 
       {/* Fleet Management */}
-      <section className="bg-neutral">
-        <div className="max-w-1440 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:p-0 p-8per px-8per gap-32">
-          <div className="col-span-1 relative flex pt-8per md:right-auto sm:right-[20%]">
-            <Image
-              src={AppActivesSVG}
-              alt="AppActivesSVG"
-              className="w-auto h-auto object-contain relative left-44 bottom-14 z-10"
-            />
-            <Image
-              src={AppSnapSVG}
-              alt="AppSnapSVG"
-              className="w-auto h-auto object-fill relative left-32 bottom-10 z-0 rounded-48"
-            />
-            <Image
-              src={FileLady}
-              alt="FileLady"
-              className="w-auto h-auto object-contain relative z-10"
-            />
+      <section className="bg-neutral overflow-y-hidden">
+        <div className="max-w-1440 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:p-0 lg:pl-8per p-8per px-8per gap-32">
+          <div className="col-span-1 relative pt-8per">
+            <div className="relative lg:w-3/5 w-full flex text-center justify-start mx-auto py-20">
+              <Image
+                src={FileLadyPNG}
+                className="w-auto h-auto object-contain"
+                alt="FileLadyPNG"
+              />
+              {/* <Image
+                src={AppActivesSVG}
+                alt="AppActivesSVG"
+                className="w-auto h-auto object-contain relative left-3 bottom-8 z-10 lg:scale-105"
+              />
+              <Image
+                src={AppSnapSVG}
+                alt="AppSnapSVG"
+                className="w-auto h-auto object-fill bottom-10 z-0 rounded-48 lg:scale-150"
+              />
+              <Image
+                src={FileLady}
+                alt="FileLady"
+                className="w-auto h-auto object-contain relative md:right-28 sm:right-28 lg:scale-125"
+              /> */}
+            </div>
           </div>
 
           <div className="col-span-1 flex flex-col items-start justify-center gap-5">
-            <h1 className="text-secondary font-sharpsans800 text-32 text-center">
+            <h1 className="text-secondary font-sharpsans800 md:text-32 text-24 text-center">
               Fleet Management
             </h1>
             <p className="text-secondary font-nunito400 text14 w-4/5">
@@ -432,9 +433,9 @@ const HomePage = () => {
       {/* Powering Your Business With Data Analytics */}
       <section className="bg-lightGray py-12per relative">
         <div className="max-w-1440 mx-auto">
-          <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-5 px-12per">
-            <div className="col-span-1 px-8per">
-              <h1 className="text-secondary font-sharpsans800 text-32">
+          <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-5 md:px-12per px-8per">
+            <div className="col-span-1 md:px-8per">
+              <h1 className="text-secondary font-sharpsans800 md:text-32 text-24">
                 Powering Your Business With Data Analytics
               </h1>
               <p className="flex items-start gap-3 my-2 text14 font-nunito400">
@@ -473,7 +474,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-5 px-12per pt-5per">
+          <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-5 md:px-12per px-8per pt-5per">
             <div className="col-span-1 lg:order-1 order-last">
               <Image
                 src={SchedualMobAppSVG}
@@ -482,8 +483,8 @@ const HomePage = () => {
               />
             </div>
 
-            <div className="col-span-1 px-8per lg:order-last order-1">
-              <h1 className="text-secondary font-sharpsans800 text-32">
+            <div className="col-span-1 md:px-8per lg:order-last order-1">
+              <h1 className="text-secondary font-sharpsans800 md:text-32 text-24">
                 Fully Integrative Mobile App
               </h1>
               <p className="flex items-start gap-3 my-2 text14 font-nunito400">
@@ -537,7 +538,7 @@ const HomePage = () => {
         {/* Spacer */}
         <div className="h-48 w-full"></div>
 
-        <h1 className="text-secondary font-sharpsans800 lg:text-40 text-32 lg:w-3/5 w-4/5 mx-auto text-center">
+        <h1 className="text-secondary font-sharpsans800 lg:text-40 md:text-32 text-24 lg:w-3/5 w-4/5 mx-auto text-center">
           Want to know more details on how we can help you?{" "}
           <span className="text-primary"> Reach out to us today! </span>
         </h1>
@@ -555,7 +556,7 @@ const HomePage = () => {
       <section className="border-t border-activeTab">
         <div className="max-w-1440 mx-auto grid lg:grid-cols-2 grid-cols-1 gap-5 px-8per py-8per">
           <div className="col-span-1 flex flex-col justify-center gap-5 items-start pl-8per pr-12per">
-            <h4 className="text-40 font-sharpsans800 text-secondary">
+            <h4 className="lg:text-40 md:text-32 text-24 font-sharpsans800 text-secondary">
               We offer a multitude of options to suit your business needs
             </h4>
             <p className="text-16 leading-24 font-nunito700 w-4/5 my-3 text-secondary">
@@ -579,14 +580,14 @@ const HomePage = () => {
       </section>
 
       {/* We provide the best and fastest logistics solutions available */}
-      <section className="relative p-12per">
+      <section className="relative lg:p-12per p-8per">
         <Image
           src={SectionBgSVG}
           className="w-full h-full absolute inset-0 z-0 object-cover"
           alt=""
         />
         <div className="max-w-1440 mx-auto">
-          <h1 className="lg:text-40 text-32 font-sharpsans800 text-light lg:w-3/4 w-full mx-auto text-center relative mb-5 z-10">
+          <h1 className="lg:text-40 md:text-32 text-24 font-sharpsans800 text-light lg:w-3/4 w-full mx-auto text-center relative mb-5 z-10">
             We provide the best and fastest logistics solutions available
           </h1>
           <div className="flex items-center max-md:flex-col justify-between gap-5 bg-light z-10 relative py-5 px-8 rounded-24">
