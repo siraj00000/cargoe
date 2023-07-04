@@ -14,6 +14,7 @@ export const hasPermission = async () => {
   return hasCookiePermission;
 };
 
+
 export const handleAcceptPermission = async () => {
   cookieStore.set("permission", "allowed");
 };
